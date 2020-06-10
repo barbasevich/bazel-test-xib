@@ -1,0 +1,11 @@
+build --verbose_failures
+build --test_output=errors
+
+test --test_runner_fail_fast
+
+build:ios --apple_platform_type=ios
+build:ios --ios_minimum_os=11.0
+build:ios --ios_simulator_device="iPhone 8"
+
+build:ios-debug --config=ios
+build:ios-debug --compilation_mode=fastbuild

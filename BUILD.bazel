@@ -1,0 +1,25 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+apple_framework(
+    name = "TestXIB",
+    module_name = "TestXIB",
+    srcs = ["TestXIB/CustomView.swift"],
+    data = ["TestXIB/CustomView.xib"],
+    visibility = ["//visibility:public"],
+)
+
+swift_library(
+    name = "TestXIBTestsLib",
+    module_name = "TestXIBTests",
+    srcs = ["TestXIBTests/TestXIBTests.swift"],
+    deps = [":TestXIB"],
+)
+
+ios_unit_test(
+    name = "TestXIBTests",
+    minimum_os_version = "11.0",
+    deps = [":TestXIBTestsLib"],
+    test_host = "//Bazel:HostApp",
+)
