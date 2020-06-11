@@ -3,3 +3,6 @@ build:
 
 test:
 	bazelisk test --config=ios "$(TARGET)Tests"
+
+clean:
+	bazelisk clean --expunge

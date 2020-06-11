@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double TestXIBVersionNumber;
 //! Project version string for TestXIB.
 FOUNDATION_EXPORT const unsigned char TestXIBVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <TestXIB/PublicHeader.h>
-
-
+#import "CustomViewObjc.h"

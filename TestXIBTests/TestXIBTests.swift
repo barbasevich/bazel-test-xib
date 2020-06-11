@@ -17,4 +17,10 @@ final class TestXIBTests: XCTestCase {
 
         assert(view != nil, "CustomView is not instantiated.")
     }
+
+    func testCustomViewObjc() {
+        let view = CustomViewObjc.fromNib()
+
+        assert(view != nil, "CustomViewObjc is not instantiated.")
+    }
 }

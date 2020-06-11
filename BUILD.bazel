@@ -5,8 +5,8 @@ load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 apple_framework(
     name = "TestXIB",
     module_name = "TestXIB",
-    srcs = ["TestXIB/CustomView.swift"],
-    data = ["TestXIB/CustomView.xib"],
+    srcs = glob(["TestXIB/**/*.h", "TestXIB/**/*.m", "TestXIB/**/*.swift"]),
+    data = glob(["TestXIB/**/*.xib"]),
     visibility = ["//visibility:public"],
 )
 
