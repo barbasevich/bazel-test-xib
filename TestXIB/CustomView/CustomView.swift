@@ -14,8 +14,13 @@ final class CustomView: UIView {
 
     static func fromNib() -> CustomView? {
         let bundle = Bundle.resourceBundle()
-        print("Bundle name - \(bundle.infoDictionary?["CFBundleName"])")
-        print("Path - \(bundle.path(forResource: "CustomView", ofType: "nib"))")
+
+        if let bunleName = bundle.infoDictionary?["CFBundleName"] {
+            print("Bundle name - \(bunleName)")
+        }
+        if let path = bundle.path(forResource: "CustomView", ofType: "nib") {
+            print("Path - \(path)")
+        }
 
         return bundle.loadNibNamed("CustomView", owner: nil, options: nil)?.first as? CustomView
     }
