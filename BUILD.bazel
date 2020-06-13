@@ -1,6 +1,5 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
 load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
 apple_framework(
     name = "TestXIB",
@@ -10,7 +9,7 @@ apple_framework(
     visibility = ["//visibility:public"],
 )
 
-swift_library(
+apple_framework(
     name = "TestXIBTestsLib",
     module_name = "TestXIBTests",
     srcs = ["TestXIBTests/TestXIBTests.swift"],
