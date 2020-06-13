@@ -3,8 +3,8 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 git_repository(
     name = "build_bazel_rules_ios",
     remote = "https://github.com/bazel-ios/rules_ios.git",
-    commit = "2bf04657a6bfcd00ade4cf2acb4e57007f7811eb",
-    shallow_since = "1591111844 -0400",
+    commit = "70a5b7ad7c2e6f845b6ebba64b5f1f92b12d1edc",
+    shallow_since = "1591987898 -0700",
 )
 
 load(
