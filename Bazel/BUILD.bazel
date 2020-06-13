@@ -12,6 +12,6 @@ ios_application(
     families = ["iphone"],
     infoplists = ["HostApp/AppInfo.plist"],
     minimum_os_version = "11.0",
-    deps = [":HostAppLib"],
     visibility = ["//visibility:public"],
+    deps = [":HostAppLib"],
 )

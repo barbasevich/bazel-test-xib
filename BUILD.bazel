@@ -3,22 +3,26 @@ load("@build_bazel_rules_ios//rules:framework.bzl", "apple_framework")
 
 apple_framework(
     name = "TestXIB",
-    module_name = "TestXIB",
-    srcs = glob(["TestXIB/**/*.h", "TestXIB/**/*.m", "TestXIB/**/*.swift"]),
+    srcs = glob([
+        "TestXIB/**/*.h",
+        "TestXIB/**/*.m",
+        "TestXIB/**/*.swift",
+    ]),
     data = glob(["TestXIB/**/*.xib"]),
+    module_name = "TestXIB",
     visibility = ["//visibility:public"],
 )
 
 apple_framework(
     name = "TestXIBTestsLib",
-    module_name = "TestXIBTests",
     srcs = ["TestXIBTests/TestXIBTests.swift"],
+    module_name = "TestXIBTests",
     deps = [":TestXIB"],
 )
 
 ios_unit_test(
     name = "TestXIBTests",
     minimum_os_version = "11.0",
-    deps = [":TestXIBTestsLib"],
     test_host = "//Bazel:HostApp",
+    deps = [":TestXIBTestsLib"],
 )
